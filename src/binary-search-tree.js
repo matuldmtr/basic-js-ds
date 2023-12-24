@@ -80,19 +80,15 @@ class BinarySearchTree {
   remove(data) {
     const removeData = (node, data) => {
       if (!node) {
-        // console.log(`data_0: ${data}`);
-        // console.log(`node_0: ${node.data}`);
         return null;
       }
 
       if (data < node.data) {
-        console.log(`data_1: ${data}`);
-        console.log(`node_1: ${node.data}`);
-
         node.left = removeData(node.left, data);
         return node;
       } else if (data > node.data) {
         node.right = removeData(node.right, data);
+        return node;
       } else {
         if (!node.left && !node.right) {
           return null;
